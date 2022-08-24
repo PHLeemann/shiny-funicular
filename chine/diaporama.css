@@ -1,0 +1,327 @@
+body
+{
+	background-color:lightgrey;
+}
+
+h1{
+	text-align:center;
+}
+
+/*pour l'image sur la page principale
+---------------------------------------------------------------------------*/
+#imgfond
+{
+	float:right;
+	margin: 1px 10px
+}
+
+/* En-tete
+---------------------------------------------------------------------------*/
+header
+{
+	background-color: black;
+	color: white;
+	display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height:3.5em;
+}
+
+header h1
+{
+	color: white;
+	font-size: 1.5em;
+	margin-left:1em;
+}
+
+
+/* Navigation
+---------------------------------------------------------------------------*/
+nav ul
+{
+    list-style-type: none;
+    display: flex;
+}
+
+nav li
+{
+    margin-right: 1em;
+}
+
+nav a
+{
+    font-size: 1.3em;
+    color: grey;
+    /*padding-bottom: 3px;*/
+    text-decoration: none;
+}
+
+nav a:hover
+{
+    color: white;
+}
+
+
+/* Pied de page
+---------------------------------------------------------------------------*/
+footer{
+	font-size: x-small;
+}
+
+/*content : permet d'avoir le menu qui reste en haut
+---------------------------------------------------------------------------*/
+.content
+{
+	position:absolute;
+    top: 4em;
+    left:0.5em;
+    right:0px;
+    bottom:0px;
+    overflow-y:scroll;
+}
+
+/* pour les photos du Salève
+---------------------------------------------------------------------------*/
+/*.saleve {
+    margin: 0.2ex;
+    border: 0.1ex solid #ccc;
+    float: left;
+    width: 320px;
+}
+
+.saleve:hover {
+    border: 1px solid #777;
+}
+
+.saleve img {
+    width: 100%;
+    height: 100%;
+}
+
+.description {
+		display:block;
+		background-color: white;
+		height: 3em;
+		font-size: 1em;
+		text-align: center;
+		overflow-y:scroll;
+}*/
+
+
+/*TrixClic : cache une section, le tout en CSS
+---------------------------------------------------------------------------*/
+.TrixClic label {
+    cursor: pointer;
+}
+
+.TrixClic .appear {
+    display: none;
+}
+
+.TrixClic input {
+    display: none;
+}
+.TrixClic input:checked ~ .appear {
+    /*display: flex;
+		flex-wrap: wrap;*/
+		display: inline-block;
+}
+
+
+/*Pour les photos
+---------------------------------------------------------------------------*/
+
+
+/*agrandit l'image quand on pase dessus*/
+/*.photos ul.categories li:hover ul li a:hover img,
+.photos ul.categories li a:hover ul li a:hover img
+{
+	display: block;
+	position: absolute;
+	top: -38px;
+	left: -50px;
+	z-index: 1;
+	width: 200px;
+	height: 150px;
+}*/
+
+
+/*alignement des photos et taille des images*/
+/*.photos ul.categories li ul li,
+.photos ul.categories li ul li a img
+{
+	display: inline;
+	float: left;
+	padding: 0.2em 0.2em 0 0;
+	vertical-align: top;
+	width: 100px;
+	height: 75px;
+	position: relative;
+}*/
+
+/*Place les images sous les titres*/
+/*.photos ul.categories{
+	position:relative;
+}*/
+
+/*placement des titres de catégories*/
+/*.photos ul.categories li{
+	display: block;
+	float: left;
+	padding:0 0.2em 0 0;
+}*/
+/*boite autour des catégories*/
+/*.photos ul.categories li a.titre {
+	display:block;
+	padding: 1em;
+	background-color:white;
+	text-decoration: none;
+	color: black;
+}*/
+
+/*On cache les catégories non-selectionnées*/
+/*.photos ul.categories li a ul,
+.photos ul.categories li ul{
+	display:none;
+}*/
+
+/*On montre la catégorie séléctionnée*/
+/*.photos ul.categories li.actif ul,
+.photos ul.categories li a:hover ul,
+.photos ul.categories li:hover ul{
+	display:block;
+	position:absolute;
+	left:0;
+	top:3.1em;
+	list-style:none;
+}*/
+
+
+/*Pour le diaporama
+---------------------------------------------------------------------------*/
+
+
+.slider-container {
+  /*background: linear-gradient(
+    149deg,
+    rgb(247, 0, 255) 0%,
+    rgb(255, 145, 0) 100%
+  );*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.slider {
+  width: 100%;
+  max-width: 500px;
+  max-height: 500px;
+  /*width: 1000px;
+  height: 1000px;*/
+  margin: 20px;
+  text-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  overflow-x: scroll;
+  position: relative;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.slides img {
+    width: 500px;
+    max-height: 500px;
+}
+
+/*.slide:nth-of-type(even) {
+  background-color: rgb(250, 246, 212);
+}*/
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 500px;
+  height: 500px;
+  scroll-snap-align: center;
+  /*margin-right: 0px;*/
+  box-sizing: border-box;
+  background: white;
+  transform-origin: center center;
+  transform: scale(1);
+}
+
+/*.slide__text {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: sans-serif;
+}*/
+
+
+
+.slide a {
+  background: none;
+  border: none;
+}
+
+a.slide__prev,
+.slider::before {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  left: 5%;
+}
+
+a.slide__next,
+.slider::after {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  right: 5%;
+}
+
+.slider::before,
+.slider::after,
+.slide__prev,
+.slide__next {
+  position: absolute;
+  top: 48%;
+  width: 35px;
+  height: 35px;
+  border: solid black;
+  border-width: 0 4px 4px 0;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+.slider::before,
+.slider::after {
+  content: "";
+  z-index: 1;
+  background: none;
+  pointer-events: none;
+}
+
+.slider__nav {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  text-align: center;
+}
+
+.slider__navlink {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: black;
+  margin: 0 10px 0 10px;
+}
