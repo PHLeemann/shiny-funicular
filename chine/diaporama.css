@@ -1,34 +1,24 @@
-body
-{
+body {
 	background-color:lightgrey;
 }
 
-h1{
+h1 {
 	text-align:center;
 }
 
-/*pour l'image sur la page principale
----------------------------------------------------------------------------*/
-#imgfond
-{
-	float:right;
-	margin: 1px 10px
-}
 
 /* En-tete
 ---------------------------------------------------------------------------*/
-header
-{
+header {
 	background-color: black;
 	color: white;
 	display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  height:3.5em;
+	justify-content: space-between;
+	align-items: flex-end;
+	height:3.5em;
 }
 
-header h1
-{
+header h1 {
 	color: white;
 	font-size: 1.5em;
 	margin-left:1em;
@@ -37,183 +27,201 @@ header h1
 
 /* Navigation
 ---------------------------------------------------------------------------*/
-nav ul
-{
-    list-style-type: none;
-    display: flex;
+nav ul {
+	list-style-type: none;
+	display: flex;
 }
 
-nav li
-{
-    margin-right: 1em;
+nav li {
+	margin-right: 1em;
 }
 
-nav a
-{
-    font-size: 1.3em;
-    color: grey;
-    /*padding-bottom: 3px;*/
-    text-decoration: none;
+nav a {
+	font-size: 1.3em;
+	color: grey;
+	/*padding-bottom: 3px;*/
+	text-decoration: none;
 }
 
-nav a:hover
-{
-    color: white;
+nav a:hover {
+	color: white;
 }
 
 
 /* Pied de page
 ---------------------------------------------------------------------------*/
-footer{
+footer {
 	font-size: x-small;
 }
 
 
 /*content : permet d'avoir le menu qui reste en haut
 ---------------------------------------------------------------------------*/
-.content
-{
+.content {
 	position:absolute;
-    top: 4em;
-    left:0.5em;
-    right:0px;
-    bottom:0px;
-    overflow-y:scroll;
+	top: 4em;
+	left:0.5em;
+	right:0px;
+	bottom:0px;
+	overflow-y:scroll;
 }
 
 
 /*TrixClic : cache une section, le tout en CSS
 ---------------------------------------------------------------------------*/
 .TrixClic label {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .TrixClic .appear {
-    display: none;
+	display: none;
 }
 
 .TrixClic input {
-    display: none;
+	display: none;
 }
 .TrixClic input:checked ~ .appear {
-    /*display: flex;
-		flex-wrap: wrap;*/
-		display: inline-block;
+	/*display: flex;
+	flex-wrap: wrap;*/
+	display: inline-block;
+}
+
+.TrixClic h3 {
+	color:blue;
 }
 
 
 /*Pour le diaporama
 ---------------------------------------------------------------------------*/
 .slider-container {
-  /*background: linear-gradient(
-    149deg,
-    rgb(247, 0, 255) 0%,
-    rgb(255, 145, 0) 100%
-  );*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+	/*background: linear-gradient(
+	149deg,
+	rgb(247, 0, 255) 0%,
+	rgb(255, 145, 0) 100%
+	);*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
 }
 
 .slider {
-  width: 100%;
-  max-width: 850px;
-  max-height: 850px;
-  /*width: 1000px;
-  height: 1000px;*/
-  margin: 20px;
-  text-align: center;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
+	width: 100%;
+	max-width: 850px;
+	max-height: 850px;
+	margin: 20px;
+	text-align: center;
+	border-radius: 20px;
+	overflow: hidden;
+	position: relative;
 }
 
 .slides {
-  display: flex;
-  overflow-x: scroll;
-  position: relative;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+	display: flex;
+	overflow-x: scroll;
+	position: relative;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	-webkit-overflow-scrolling: touch;
 }
 
 .slides img {
-    max-width: 750px;
-    max-height: 750px;
+	max-width: 750px;
+	max-height: 750px;
 }
 
+.slides img title {
+	position:absolute;
+	top: -2%;	
+}
+
+.description {
+	box-sizing: border-box;
+	position: absolute;
+	top: 2%;
+	left: 50%;
+	width: 750px;
+	margin-left: -375px;
+	text-align: center;
+	/*background-color: lightgrey;*/
+	height: 1.5em;
+	font-size: 1.5em;
+	/*overflow-y:scroll;*/
+}
+
+
 .slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  width: 850px;
-  height: 850px;
-  scroll-snap-align: center;
-  /*margin-right: 0px;*/
-  box-sizing: border-box;
-  background: lightgrey;
-  /*background: white;*/
-  transform-origin: center center;
-  transform: scale(1);
+ 	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	width: 850px;
+	height: 850px;
+	scroll-snap-align: center;
+	/*margin-right: 0px;*/
+	box-sizing: border-box;
+	background: lightgrey;
+	/*background: white;*/
+	transform-origin: center center;
+	transform: scale(1);
 }
 
 .slide a {
-  background: none;
-  border: none;
+	background: none;
+	border: none;
 }
 
 a.slide__prev,
 .slider::before {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-  left: 2%;
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+	left: 2%;
 }
 
 a.slide__next,
 .slider::after {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  right: 2%;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	right: 2%;
 }
 
 .slider::before,
 .slider::after,
 .slide__prev,
 .slide__next {
-  position: absolute;
-  top: 48%;
-  width: 35px;
-  height: 35px;
-  border: solid black;
-  border-width: 0 4px 4px 0;
-  padding: 3px;
-  box-sizing: border-box;
+	position: absolute;
+	top: 48%;
+	width: 35px;
+	height: 35px;
+	border: solid black;
+	border-width: 0 4px 4px 0;
+	padding: 3px;
+	box-sizing: border-box;
 }
 
 .slider::before,
 .slider::after {
-  content: "";
-  z-index: 1;
-  background: none;
-  pointer-events: none;
+	content: "";
+	z-index: 1;
+	background: none;
+	pointer-events: none;
 }
 
 .slider__nav {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 2%;
-  left: 50%;
-  width: 600px;
-  margin-left: -300px;
-  text-align: center;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 1%;
+	left: 50%;
+	width: 750px;
+	margin-left: -375px;
+	text-align: center;
 }
 
 .slider__navlink {
-  display: inline-block;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  background-color: black;
-  margin: 0 10px 0 10px;
+	display: inline-block;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	background-color: black;
+	margin: 0 10px 0 10px;
 }
