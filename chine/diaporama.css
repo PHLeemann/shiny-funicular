@@ -66,6 +66,9 @@ footer {
 	overflow-y:scroll;
 }
 
+.partext{
+	margin: 0 1em 0 1em;
+}
 
 /*TrixClic : cache une section, le tout en CSS
 ---------------------------------------------------------------------------*/
@@ -88,6 +91,10 @@ footer {
 
 .TrixClic h3 {
 	color:blue;
+}
+
+.TrixClic h2 {
+	color:black;
 }
 
 
