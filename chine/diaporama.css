@@ -68,6 +68,7 @@ footer {
 
 .partext{
 	margin: 0 1em 0 1em;
+	max-width: 1000px;
 }
 
 /*TrixClic : cache une section, le tout en CSS
